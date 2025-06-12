@@ -5,26 +5,32 @@ Develop a consolidated report to track revenue, profit, employee performance dai
 
 ## 📑 Table of Contents
 
-- [📊 Overview](#-overview)
-- [🎯 Features](#-features)
-- [💡 How i do this project ?](#-project-method)
-- [📋 Flowchart](#-report-types)
-- [📊 Visualization](#-visualization)
-- [🛠️ Installation](#️-installation)
-- [🤝 Contributing](#-contributing)
-- [📞 Support](#-support)
+- [I. Overview](#-overview)
+- [II. Features](#-features)
+- [III. Tech stack](#-tech-stack)
+- [IV. How I did this project ?](#-project-method)
+- [V. Flowchart](#-report-types)
+- [VI. Visualization](#-visualization)
+- [VII. Installation](#️-installation)
+- [VIII. Conclusion](#-conclusion)
 
-<h2> 📊 Overview </h2>
+<h2> I. Overview </h2>
 This is my personal project with the goal of becoming a data analyst intern. Assuming a scenario where the Finance Department requested me to create two reports using the company's data — a summary report and an employee performance report — I utilized PostgreSQL and Power BI to complete the task. In addition to generating these two reports, I also visualized the data to help the management team better monitor and manage the company's overall performance.
 
-<h2> 🎯 Features</h2>
+<h2> II. Features</h2>
 
 - Daily data processing is automated using a stored procedure.
 - The data is organized using the star schema model.
 - The procedure runs at high speed and stores all historical data.
 - The reports are visually intuitive and directly connected to the database, automatically updating whenever the database changes.
+
+<h2> III. Tech stack </h2>
+
+![PostgreSQL](https://img.shields.io/badge/POSTGRESQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Power BI](https://img.shields.io/badge/POWER%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+
   
-<h2> 💡 How i do this project ? </h2>
+<h2> IV. How i did this project ? </h2>
 
 <h3> Step 1: Preprocessing data </h3>
 
@@ -55,7 +61,7 @@ This is my personal project with the goal of becoming a data analyst intern. Ass
 
 - I also created a procedure_log table to record each time the procedure is executed. It helps with error handling by logging error details without stopping the procedure from running.
 
-<h2> 📊 Visualization </h2>
+<h2> V. Visualization </h2>
 
 To present the company's situation to the leadership team, manually using SQL for reporting is not practical, as it's difficult to provide a comprehensive overview. Therefore, I used Power BI to visualize the data.
 
@@ -85,33 +91,21 @@ To present the company's situation to the leadership team, manually using SQL fo
 ![tong_quan_page.png](https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/tong_quan_page.png)
 ![xu_huong_page.png](https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/xu_huong_page.png)
 
-<h2> 📋 Flowchart</h2>
+<h2> VI. Flowchart</h2>
 
 ![flowchart.drawio.png](https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/flowchart.drawio.png)
 
-<h2> 🛠️ Installation</h2>
+<h2> VII. Installation</h2>
 There are two ways to view this dashboard:
 
 1. Download the file final project.pbix, install Power BI Desktop, and simply open the file to view the dashboard.
 2. Check my powerbi link:
 
-<h2> Contributing </h2>
+<h2> VIII. Conclusion </h2>
+
+Through this personal project, I not only improved my SQL skills, but also learned how to organize data, store it efficiently, and retrieve it when needed. In addition, I gained experience in data visualization by connecting to a database and using DAX formulas. Most importantly, I developed a clearer understanding of how data analysis can benefit a business. This allowed me to present data in a way that delivers the most valuable insights to viewers, especially the management team.
 
 Since this is my very first project, there are certainly unavoidable mistakes. If you have any feedback, I would sincerely appreciate it with all my gratitude.
 
 
-
-### 🗄️ Databases
-![PostgreSQL](https://img.shields.io/badge/POSTGRESQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-
-### 🔧 Tools
-![Power BI](https://img.shields.io/badge/POWER%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-
-
-
-
-- **Context**: Receive request from the finance department to prepare 2 daily reports and finalize daily inventory numbers, write into an Excel file
-- **Tech stack:** Power BI, PostgreSQL
-- **How i do:** First, I process data using PostgreSQL, building dim and fact tables based on the star schema, and writing a procedure to continuously update data when new data is added. Next, I visualize the data using Power BI, presenting it with meaningful charts to explain the company's financial situation, thereby assisting the BOD in management and proposing development strategies for the company.
-- **What i achieved**: Proficient in Power BI, skilled in DAX, capable of organizing and processing data using PostgreSQL to create continuously updated reports. 
 
