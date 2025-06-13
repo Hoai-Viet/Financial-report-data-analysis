@@ -93,6 +93,15 @@ The two preliminary reports that I have outlined:
   <p><em>Figure 9. dim_city </em></p>
   </div>
 
+- Step 3: At this stage, I will update the fact tables based on information from the dimension tables, such as changing the data type from varchar to int to improve data retrieval speed. Additionally, I will remove unnecessary columns to avoid clutter.
+
+<div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/fact_txn_before_and_after.png" alt="Mô tả" width=3000px>
+  <p><em>Figure 10. fact_txn before and after modification </em></p>
+  </div>
+
+- Step 4: 
+
 <h3> 5.2. Build a summary monthly report </h3>
 
 - After understanding the business logic and the allocation method of each expense, I created temporary tables to store the information at each calculation step.
