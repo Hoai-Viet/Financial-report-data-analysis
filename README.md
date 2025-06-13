@@ -1,4 +1,4 @@
-<h1 align="center">Financial report data analysis</h1>
+<h1 align="center">Financial monthly report data analysis</h1>
 
 <h2>Description</h2>
 Develop a consolidated report to track revenue, profit, employee performance daily, thereby painting a financial picture and proposing development strategies for the company. 
@@ -82,7 +82,7 @@ To present the company's situation to the leadership team, manually using SQL fo
 - For slicers, there are two main ones: region and time, allowing viewers to filter the financial data by specific region and time period, or view it for all regions and all time periods.
 - After identifying the metrics and slicers, I needed to select appropriate charts and colors to effectively represent those figures.
 
-<h3> Step 4: Turn ideas into reality. </h3>
+<h3> Step 4: Turn ideas into reality </h3>
 
 - First, I chose the Z-pattern as the main layout structure.
 - Determine the placement of charts based on the chosen pattern, prioritizing general overviews first, followed by more detailed insights.
