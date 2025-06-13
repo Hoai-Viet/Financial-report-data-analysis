@@ -40,7 +40,7 @@ This is my personal project with the goal of becoming a data analyst intern. Ass
 - After that, I processed the cleaning fact table by selecting the necessary columns, removing the irrelevant ones, transforming values based onto better fit my objectives.
 - Finally, I encapsulated the entire process into a single procedure, so that by simply running it, all steps are executed automatically.
 
-<h3> Step 2: Build a summary report.</h3>
+<h3> Step 2: Build a summary monthly report </h3>
 
 - After understanding the business logic and the allocation method of each expense, I created temporary tables to store the information at each calculation step.
 - The temporary tables include:
@@ -51,14 +51,14 @@ This is my personal project with the goal of becoming a data analyst intern. Ass
   - fact_summary_report_monthly: the final amount of funds allocated to each area at the end of the period.
 - From the fact_summary_report_monthly table, the summary report can be generated simply by using SQL queries."
 
-<h3> Step 3: Build a monthly business performance ranking report.</h3>
+<h3> Step 3: Build a monthly business performance ranking report </h3>
 
 - For this report, I created the asm_rank_report table to store the information.
 - First, I applied business logic to calculate the contribution values of each employee to the company.
 - Each employee's rank is determined by a total score, which is the sum of two main components: the scale score and the financial score. These two main scores are further broken down into several sub-scores. Therefore, I calculated these sub-scores by ranking the indicators computed in step 1.
 - Finally, similar to the previous report, the desired ranking report can be retrieved simply using SQL queries."
 
-<h3> Step 4: Ensure that the procedure continues to run even if an error occurs within a block.</h3>
+<h3> Step 4: Ensure that the procedure continues to run even if an error occurs within a block </h3>
 
 I also created a procedure_log table to record each time the procedure is executed. It helps with error handling by logging error details without stopping the procedure from running.
 
