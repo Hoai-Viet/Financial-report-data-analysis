@@ -5,42 +5,95 @@ Develop a consolidated report to track revenue, profit, employee performance mon
 
 ## Table of Contents
 
-- [I. Overview](#-overview)
-- [II. Features](#-features)
-- [III. Tech stack](#-tech-stack)
-- [IV. How I did this project ?](#-project-method)
-- [V. Flowchart](#-report-types)
-- [VI. Visualization](#-visualization)
-- [VII. Requirement](#️-requirement)
-- [VIII. Installation](#️-installation)
-- [IX. Conclusion](#-conclusion)
+- [1. Overview](#-overview)
+- [2. Tech stack](#-tech-stack)
+- [3. Flowchart](#-report-types)
+- [4. Data collection](#-data-collection)
+- [5. How I did this project ?](#-project-method)
+- [6. Visualization](#-visualization)
+- [7. How to view this dashboard](#️-installation)
+- [8. Conclusion](#-conclusion)
 
-<h2> I. Overview </h2>
-This is my personal project with the goal of becoming a data analyst intern. Assuming a scenario where the Finance Department requested me to create two reports using the company's data — a summary report and an employee performance report — I utilized PostgreSQL and Power BI to complete the task. In addition to generating these two reports, I also visualized the data to help the management team better monitor and manage the company's overall performance.
+<h2> 1. Overview </h2>
 
-<h2> II. Features</h2>
+I was assigned by upper management to create reports for monitoring and managing the company's financial situation. To effectively manage the overall company performance, I focused on analyzing the performance of each region and the Area Sales Managers (ASMs) responsible for them. After identifying the target subjects for analysis, the next step is data collection, which will be explained in more detail in the following sections.
 
-- Daily data processing is automated using a stored procedure.
-- The data is organized using the star schema model.
-- The procedure runs at high speed and stores all historical data.
-- The reports are visually intuitive and directly connected to the database, automatically updating whenever the database changes.
+The two preliminary reports that I have outlined:
 
-<h2> III. Tech stack </h2>
+<div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/mockup_os_report.png" alt="Mô tả">
+  <p><em>Figure1. mock up summary report</em></p>
+</div>
+
+
+<div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/mockup_os_asm_rank.png" alt="Mô tả">
+  <p><em>Figure 2. mock up asm rank report</em></p>
+</div>
+
+
+<h2> 2. Tech stack </h2>
 
 ![PostgreSQL](https://img.shields.io/badge/POSTGRESQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Power BI](https://img.shields.io/badge/POWER%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![Dbeaver](https://img.shields.io/badge/dbeaver-382923?style=for-the-badge&logo=dbeaver&logoColor=white)
 
+<h2> 3. Flowchart</h2>
+
+<div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/flowchart.drawio.png" alt="Mô tả">
+  <p><em>Figure 3. Flowchart</em></p>
+</div>
+
+<h2> 4. Data collection </h2> 
+
+- Step 1: After identifying the key indicators, I needed to determine the components of the funding sources by contacting the Accounting – Finance department, IT department, Human resource department to obtain the necessary data.
+- Step 2: Next, I imported the data into PostgreSQL using DBeaver and performed several verification steps to ensure the data was imported accurately and completely
+- Step 3: At this stage, the data consisted of isolated transactions. I had to apply business knowledge along with basic SQL commands to transform them into fact tables. Although these tables were processed, they were still raw and not yet ready for direct use.
+- The result of step 3:
+
+<div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/fact_raw_tables.png" alt="Mô tả">
+  <p><em>Figure 4. fact raw tables </em></p>
+</div>
   
-<h2> IV. How i did this project ? </h2>
+<h2> 5. How i did this project ? </h2>
 
-<h3> Step 1: Preprocessing data </h3>
+<h3> 5.1. Preprocessing data </h3>
 
-- Fist of all, i need to clearly understand what my data represents, the meaning of each column, and the business context behind them.
-- Next, the dimension tables were created based on the fact raw tables.
-- After that, I processed the cleaning fact table by selecting the necessary columns, removing the irrelevant ones, transforming values based onto better fit my objectives.
-- Finally, I encapsulated the entire process into a single procedure, so that by simply running it, all steps are executed automatically.
+- Step 1:  With the three raw fact files just created, I began transforming them into fact tables containing only the necessary data, along with their corresponding dimension tables. I continued working with PostgreSQL via DBeaver and performed import validation steps to ensure the data was displayed accurately and completely.
+- Step 2: Next, I created dimension tables based on the star schema to enable more efficient data storage as the dataset grows, include:
+  - dim_funding_structure: Stores information about a fund, including id, parent_id, and other relevant details.
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/dim_funding_structure.png" alt="Mô tả">
+  <p><em>Figure 5. dim_funding_structure </em></p>
+  </div>
+  
+  - dim_area: Stores information such as region name, region code, and so on.
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/dim_area.png" alt="Mô tả">
+  <p><em>Figure 6. dim_area </em></p>
+  </div>
+    
+  - dim_date: Contains information about the reporting date.
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/dim_date.png" alt="Mô tả">
+  <p><em>Figure 7. dim_date </em></p>
+  </div>
 
-<h3> Step 2: Build a summary monthly report </h3>
+  - dim_staff: Stores information about ASMs.
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/dim_staff.png" alt="Mô tả">
+  <p><em>Figure 8. dim_staff </em></p>
+  </div>
+
+  - dim_city: Stores information about cities.
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/dim_city.png" alt="Mô tả">
+  <p><em>Figure 9. dim_city </em></p>
+  </div>
+
+<h3> 5.2. Build a summary monthly report </h3>
 
 - After understanding the business logic and the allocation method of each expense, I created temporary tables to store the information at each calculation step.
 - The temporary tables include:
@@ -62,7 +115,7 @@ This is my personal project with the goal of becoming a data analyst intern. Ass
 
 I also created a procedure_log table to record each time the procedure is executed. It helps with error handling by logging error details without stopping the procedure from running.
 
-<h2> V. Visualization </h2>
+<h2> 6. Visualization </h2>
 
 To present the company's situation to the leadership team, manually using SQL for reporting is not practical, as it's difficult to provide a comprehensive overview. Therefore, I used Power BI to visualize the data.
 
@@ -92,25 +145,12 @@ To present the company's situation to the leadership team, manually using SQL fo
 ![tong_quan_page.png](https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/tong_quan_page.png)
 ![xu_huong_page.png](https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/xu_huong_page.png)
 
-<h2> VI. Flowchart</h2>
 
-![flowchart.drawio.png](https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/flowchart.drawio.png)
+<h2> 7. How to view this dashboard ?</h2>
 
-<h2> VII. Requirement </h2>
+Check my Power BI link:
 
-- OS: Windows 8.1, 10, Server 2012 R2, 2016, 2019.
-- CPU: 1 GHz (4-core or higher recommended).
-- RAM: 8 GB (16 GB+ recommended).
-- Storage: 20 GB free (SSD, 50 GB+ recommended).
-
-<h2> VIII. Installation</h2>
-
-There are two ways to view this dashboard:
-
-1. Download the file final project.pbix, install Power BI Desktop, and simply open the file to view the dashboard.
-2. Check my powerbi link:
-
-<h2> IX. Conclusion </h2>
+<h2> 8. Conclusion </h2>
 
 Through this personal project, I not only improved my SQL skills, but also learned how to organize data, store it efficiently, and retrieve it when needed. In addition, I gained experience in data visualization by connecting to a database and using DAX formulas. Most importantly, I developed a clearer understanding of how data analysis can benefit a business. This allowed me to present data in a way that delivers the most valuable insights to viewers, especially the management team.
 
