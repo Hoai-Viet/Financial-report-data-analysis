@@ -1,9 +1,9 @@
 <h1 align="center">Financial monthly report data analysis</h1>
 
 <h2>Description</h2>
-Develop a consolidated report to track revenue, profit, employee performance daily, thereby painting a financial picture and proposing development strategies for the company. 
+Develop a consolidated report to track revenue, profit, employee performance monthky, thereby painting a financial picture and proposing development strategies for the company. 
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [I. Overview](#-overview)
 - [II. Features](#-features)
@@ -11,8 +11,9 @@ Develop a consolidated report to track revenue, profit, employee performance dai
 - [IV. How I did this project ?](#-project-method)
 - [V. Flowchart](#-report-types)
 - [VI. Visualization](#-visualization)
-- [VII. Installation](#️-installation)
-- [VIII. Conclusion](#-conclusion)
+- [VII. Requirement](#️-requirement)
+- [VIII. Installation](#️-installation)
+- [IX. Conclusion](#-conclusion)
 
 <h2> I. Overview </h2>
 This is my personal project with the goal of becoming a data analyst intern. Assuming a scenario where the Finance Department requested me to create two reports using the company's data — a summary report and an employee performance report — I utilized PostgreSQL and Power BI to complete the task. In addition to generating these two reports, I also visualized the data to help the management team better monitor and manage the company's overall performance.
@@ -36,7 +37,7 @@ This is my personal project with the goal of becoming a data analyst intern. Ass
 
 - Fist of all, i need to clearly understand what my data represents, the meaning of each column, and the business context behind them.
 - Next, the dimension tables were created based on the fact raw tables.
-- After that, I processed the fact table by selecting the necessary columns, removing the irrelevant ones, transforming values based onto better fit my objectives.
+- After that, I processed the cleaning fact table by selecting the necessary columns, removing the irrelevant ones, transforming values based onto better fit my objectives.
 - Finally, I encapsulated the entire process into a single procedure, so that by simply running it, all steps are executed automatically.
 
 <h3> Step 2: Build a summary report.</h3>
@@ -47,7 +48,7 @@ This is my personal project with the goal of becoming a data analyst intern. Ass
   - tmp_total_dbt_staff_each_area_and_month: the end-of-period outstanding balance for each area.
   - tmp_total_dist_debt_staff_monthly: the average end-of-period outstanding balance for each area.
   - tmp_ratio_each_area_to_all_area: the allocation ratio of funds to each area at the end of the period.
-  - fact_summary_report_monthly: the final amount of funds allocated to each area at the end of the.
+  - fact_summary_report_monthly: the final amount of funds allocated to each area at the end of the period.
 - From the fact_summary_report_monthly table, the summary report can be generated simply by using SQL queries."
 
 <h3> Step 3: Build a monthly business performance ranking report.</h3>
@@ -59,7 +60,7 @@ This is my personal project with the goal of becoming a data analyst intern. Ass
 
 <h3> Step 4: Ensure that the procedure continues to run even if an error occurs within a block.</h3>
 
-- I also created a procedure_log table to record each time the procedure is executed. It helps with error handling by logging error details without stopping the procedure from running.
+I also created a procedure_log table to record each time the procedure is executed. It helps with error handling by logging error details without stopping the procedure from running.
 
 <h2> V. Visualization </h2>
 
@@ -95,13 +96,21 @@ To present the company's situation to the leadership team, manually using SQL fo
 
 ![flowchart.drawio.png](https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/flowchart.drawio.png)
 
-<h2> VII. Installation</h2>
+<h2> VII. Requirement </h2>
+
+- OS: Windows 8.1, 10, Server 2012 R2, 2016, 2019.
+- CPU: 1 GHz (4-core or higher recommended).
+- RAM: 8 GB (16 GB+ recommended).
+- Storage: 20 GB free (SSD, 50 GB+ recommended).
+
+<h2> VIII. Installation</h2>
+
 There are two ways to view this dashboard:
 
 1. Download the file final project.pbix, install Power BI Desktop, and simply open the file to view the dashboard.
 2. Check my powerbi link:
 
-<h2> VIII. Conclusion </h2>
+<h2> IX. Conclusion </h2>
 
 Through this personal project, I not only improved my SQL skills, but also learned how to organize data, store it efficiently, and retrieve it when needed. In addition, I gained experience in data visualization by connecting to a database and using DAX formulas. Most importantly, I developed a clearer understanding of how data analysis can benefit a business. This allowed me to present data in a way that delivers the most valuable insights to viewers, especially the management team.
 
