@@ -95,44 +95,77 @@ The two preliminary reports that I have outlined:
 
 - Step 3: At this stage, I will update the fact tables based on information from the dimension tables, such as changing the data type from varchar to int to improve data retrieval speed. Additionally, I will remove unnecessary columns to avoid clutter.
 
-<div align="center">
+  <div align="center">
   <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/fact_txn_before_and_after.png" alt="Mô tả" width=3000px>
   <p><em>Figure 10. fact_txn before and after modification </em></p>
   </div>
 
-- Step 4: 
+- Step 4: Finally, i created two tables: fact_summary_report and asm_rank_report. These are the final tables that store the processed data. Reports can be generated directly from these tables using SQL queries.
+  
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/fact_summary_report.png" alt="Mô tả">
+  <p><em>Figure 11. fact_summary_report </em></p>
+  </div>
 
-<h3> 5.2. Build a summary monthly report </h3>
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/asm_rank_report.png" alt="Mô tả">
+  <p><em>Figure 12. asm_rank_report </em></p>
+  </div>
 
-- After understanding the business logic and the allocation method of each expense, I created temporary tables to store the information at each calculation step.
-- The temporary tables include:
+<h3> 5.2. Build summary monthly report </h3>
+
+- Step 1: After understanding the business logic and the allocation method of each expense, I created temporary tables to store the information at each calculation step, the temporary tables include:. 
   - tmp_report_gl_by_area_monthly: the original funds allocated from the head office at the end of the period.
   - tmp_total_dbt_staff_each_area_and_month: the end-of-period outstanding balance for each area.
   - tmp_total_dist_debt_staff_monthly: the average end-of-period outstanding balance for each area.
   - tmp_ratio_each_area_to_all_area: the allocation ratio of funds to each area at the end of the period.
   - fact_summary_report_monthly: the final amount of funds allocated to each area at the end of the period.
-- From the fact_summary_report_monthly table, the summary report can be generated simply by using SQL queries."
+    
+- Step 2: After all the calculations are completed, the final data will be loaded into the fact_summary_report table, the summary report can be generated simply by using SQL queries."
 
-<h3> Step 3: Build a monthly business performance ranking report </h3>
+<h3> 5.3. Build a monthly business performance ranking report </h3>
 
-- For this report, I created the asm_rank_report table to store the information.
-- First, I applied business logic to calculate the contribution values of each employee to the company.
-- Each employee's rank is determined by a total score, which is the sum of two main components: the scale score and the financial score. These two main scores are further broken down into several sub-scores. Therefore, I calculated these sub-scores by ranking the indicators computed in step 1.
-- Finally, similar to the previous report, the desired ranking report can be retrieved simply using SQL queries."
+- Step 1: For this report, I created the asm_rank_report table to store the information.
+- Step 2: I applied business logic to calculate the contribution values of each employee to the company.
+- Step 3: Employee's rank is determined by a total score, which is the sum of two main components: the scale score and the financial score. These two main scores are further broken down into several sub-scores. Therefore, I calculated these sub-scores by ranking the indicators computed in step 1.
+- Step 4: Similar to the previous report, the desired ranking report can be retrieved simply using SQL queries."
 
-<h3> Step 4: Ensure that the procedure continues to run even if an error occurs within a block </h3>
+<h3> 5.3. Ensure that the procedure continues to run even if an error occurs within a block </h3>
 
 I also created a procedure_log table to record each time the procedure is executed. It helps with error handling by logging error details without stopping the procedure from running.
+
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/procedure_log.png" alt="Mô tả">
+  <p><em>Figure 13. procedure_log </em></p>
+  </div>
 
 <h2> 6. Visualization </h2>
 
 To present the company's situation to the leadership team, manually using SQL for reporting is not practical, as it's difficult to provide a comprehensive overview. Therefore, I used Power BI to visualize the data.
 
-<h3> Step 1: Prepare data </h3>
+<h3> 6.1. Prepare data </h3>
 
-- First, I need to connect Power BI to my database to retrieve the required tables.
-- Next, I need to verify the relationships between the tables to ensure that the star schema is correctly maintained, just as it is in the database.
-- Additionally, to present the tables as intended, I also needed to adjust the source data to align with how Power BI operates.
+- Step 1: Connecting Power BI to my database to retrieve the required tables.
+
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/choosing_database.png" alt="Mô tả">
+  <p><em>Figure 14. choosing database </em></p>
+  </div>
+
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/choosing_database.png" alt="Mô tả">
+  <p><em>Figure 15. connecting database </em></p>
+  </div>
+
+
+- Step 2: I need to verify and modify the relationships between the tables to ensure that the star schema is correctly maintained, just as it is in the database.
+
+  <div align="center">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/choosing_database.png" alt="Mô tả">
+  <p><em>Figure 16. model relationship </em></p>
+  </div>
+  
+- Step 3: Present the tables as intended, I also needed to adjust the source data to align with how Power BI operates.
 
 <h3> Step 2: Define my goals </h3>
 
