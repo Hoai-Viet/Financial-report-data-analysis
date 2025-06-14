@@ -120,15 +120,15 @@ The two preliminary reports that I have outlined:
   - tmp_total_dist_debt_staff_monthly: the average end-of-period outstanding balance for each area.
   - tmp_ratio_each_area_to_all_area: the allocation ratio of funds to each area at the end of the period.
   - fact_summary_report_monthly: the final amount of funds allocated to each area at the end of the period.
-  - 
+    
 - Step 2: After all the calculations are completed, the final data will be loaded into the fact_summary_report table, the summary report can be generated simply by using SQL queries."
 
 <h3> 5.3. Build a monthly business performance ranking report </h3>
 
 - Step 1: For this report, I created the asm_rank_report table to store the information.
 - Step 2: I applied business logic to calculate the contribution values of each employee to the company.
-- Step 3: employee's rank is determined by a total score, which is the sum of two main components: the scale score and the financial score. These two main scores are further broken down into several sub-scores. Therefore, I calculated these sub-scores by ranking the indicators computed in step 1.
-- Step 4: similar to the previous report, the desired ranking report can be retrieved simply using SQL queries."
+- Step 3: Employee's rank is determined by a total score, which is the sum of two main components: the scale score and the financial score. These two main scores are further broken down into several sub-scores. Therefore, I calculated these sub-scores by ranking the indicators computed in step 1.
+- Step 4: Similar to the previous report, the desired ranking report can be retrieved simply using SQL queries."
 
 <h3> 5.3. Ensure that the procedure continues to run even if an error occurs within a block </h3>
 
