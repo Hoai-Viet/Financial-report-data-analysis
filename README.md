@@ -41,7 +41,7 @@ The two preliminary reports that I have outlined:
 <h2> 3. Flowchart</h2>
 
 <div align="center">
-  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/flowchart.drawio.png" alt="Mô tả">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/flowchart.drawio.png" alt="Mô tả">
   <p><em>Figure 3. Flowchart</em></p>
 </div>
 
@@ -153,7 +153,7 @@ To present the company's situation to the leadership team, manually using SQL fo
   </div>
 
   <div align="center">
-  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/choosing_database.png" alt="Mô tả">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/connecting_database.png" alt="Mô tả">
   <p><em>Figure 15. connecting database </em></p>
   </div>
 
@@ -161,28 +161,28 @@ To present the company's situation to the leadership team, manually using SQL fo
 - Step 2: I need to verify and modify the relationships between the tables to ensure that the star schema is correctly maintained, just as it is in the database.
 
   <div align="center">
-  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/choosing_database.png" alt="Mô tả">
+  <img src="https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/model_relationship.png" alt="Mô tả">
   <p><em>Figure 16. model relationship </em></p>
   </div>
   
 - Step 3: Present the tables as intended, I also needed to adjust the source data to align with how Power BI operates.
 
-<h3> Step 2: Define my goals </h3>
+<h3> 6.2. Define my goals </h3>
 
-- Every business aims for sustainable growth, which is why I focused on four key objectives in each dashboard page: increasing profit, increasing revenue, reducing costs, and minimizing risks.
-- I also needed to consider who would be reviewing my dashboards, so I designed them in a way that both business professionals and those without an economics background could easily understand the insights being conveyed.
+- Step 1: Every business aims for sustainable growth, which is why I focused on four key objectives in each dashboard page: increasing profit, increasing revenue, reducing costs, and minimizing risks.
+- Step 2: I also needed to consider who would be reviewing my dashboards, so I designed them in a way that both business professionals and those without an economics background could easily understand the insights being conveyed.
 
-<h3> Step 3: Define metrics and slicers </h3>
+<h3> 6.3. Define metrics and slicers </h3>
 
-- The key metrics used are aligned with the objectives mentioned in step 2, such as revenue, profit, and non-performing loan ratio, all calculated using DAX.
-- For slicers, there are two main ones: region and time, allowing viewers to filter the financial data by specific region and time period, or view it for all regions and all time periods.
-- After identifying the metrics and slicers, I needed to select appropriate charts and colors to effectively represent those figures.
+- Step 1: The key metrics used are aligned with the objectives mentioned in step 2, such as revenue, profit, and non-performing loan ratio, all calculated using DAX.
+- Step 2: For slicers, there are two main ones: region and time, allowing viewers to filter the financial data by specific region and time period, or view it for all regions and all time periods.
+- Step 3: After identifying the metrics and slicers, I needed to select appropriate charts and colors to effectively represent those figures.
 
-<h3> Step 4: Turn ideas into reality </h3>
+<h3> 6.4 Turn ideas into reality </h3>
 
-- First, I chose the Z-pattern as the main layout structure.
-- Determine the placement of charts based on the chosen pattern, prioritizing general overviews first, followed by more detailed insights.
-- Finally, I provided some insights and verified the accuracy of the data by cross-checking it directly with the database.
+- Step 1: I chose the Z-pattern layout because it aligns with the natural way people scan content — from left to right and top to bottom — forming a visual path that resembles the letter Z.
+- Step 2: Determine the placement of charts based on the chosen pattern, prioritizing general overviews first, followed by more detailed insights.
+- Step 3: I provided some insights and verified the accuracy of the data by cross-checking it directly with the database.
 - Some pages from my dashboard:
 ![tong_quan_page.png](https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/tong_quan_page.png)
 ![xu_huong_page.png](https://github.com/Vietzzzz/Financial-report-data-analysis/blob/main/image/xu_huong_page.png)
