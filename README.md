@@ -190,7 +190,7 @@ To present the company's situation to the leadership team, manually using SQL fo
 
 <h2> 7. How to view this dashboard ?</h2>
 
-Check my Power BI link:
+Check my Power BI dashboard here: [View Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMTA5NTU0MDItZGFkNC00ZGY3LWFiZDItYjExYjk4OWVhOTRjIiwidCI6ImQ2ZDEzZTBlLTdjYTAtNDNkNC05OTY1LTQyZDM4ZWU1M2RkYSIsImMiOjEwfQ%3D%3D)
 
 <h2> 8. Conclusion </h2>
 
